@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<title>Full page — virsaviya_web</title>
+<!--
+  Блок «весь сайт» для Behance в стиле серии обложек, 1920 px в ширину.
+  ?mode=desktop — полная страница в окне браузера (full-desktop.png)
+  ?mode=mobile  — мобильная страница, разрезанная на колонки (full-mobile.png)
+-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@700&family=Manrope:wght@500;700&display=swap" rel="stylesheet">
+<style>
+  :root { --bg: #0a0a0b; --pink: #ff4fa3; --text: #f4f1f3; --muted: rgba(244, 241, 243, 0.55); }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { width: 1920px; background: var(--bg); overflow: hidden; }
+  body {
+    position: relative;
+    padding: 90px 160px 140px;
+    font-family: 'Manrope', Arial, sans-serif;
+    color: var(--text);
+    background:
+      radial-gradient(1000px 600px at 50% 0%, rgba(255, 79, 163, 0.12), transparent 70%),
+      radial-gradient(1000px 600px at 50% 100%, rgba(255, 79, 163, 0.12), transparent 70%),
+      var(--bg);
+  }
+
+  .head { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 70px; }
+  .label { font-size: 16px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--pink); }
+  .title { margin-top: 14px; font-family: 'Unbounded', 'Arial Black', sans-serif; font-size: 56px; letter-spacing: -0.02em; }
+  .handle { font-size: 18px; font-weight: 700; color: var(--muted); }
+  .handle b { color: var(--text); }
+
+  .browser {
+    border-radius: 18px;
+    overflow: hidden;
+    background: #141416;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    box-shadow: 0 40px 100px rgba(0, 0, 0, 0.7), 0 0 0 8px rgba(255, 79, 163, 0.06);
+  }
+  .browser__bar { display: flex; align-items: center; gap: 8px; padding: 16px 20px; background: #19191c; }
+  .browser__bar i { width: 12px; height: 12px; border-radius: 50%; background: rgba(255, 255, 255, 0.18); }
+  .browser__bar i:first-child { background: var(--pink); }
+  .browser__url {
+    margin-left: 18px;
+    padding: 6px 18px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.06);
+    font-size: 13px;
+    color: var(--muted);
+  }
+  .browser img { display: block; width: 100%; }
+
+  .strips { display: flex; justify-content: center; gap: 40px; }
+  .strip {
+    width: 360px;
+    overflow: hidden;
+    border-radius: 36px;
+    border: 10px solid #1a1a1d;
+    box-shadow: 0 40px 90px rgba(0, 0, 0, 0.7);
+    background: #000;
+  }
+  .strip img { display: block; width: 100%; }
+</style>
+</head>
+<body>
+  <div class="head">
+    <div>
+      <p class="label" id="label">Весь сайт</p>
+      <h1 class="title" id="title">Десктоп целиком</h1>
+    </div>
+    <p class="handle">virsaviya · web &nbsp;·&nbsp; <b>@virsaviya_web</b></p>
+  </div>
+
+  <div id="stage"></div>
+
+  <script>
+    const mode = new URLSearchParams(location.search).get('mode') || 'desktop';
+    const stage = document.getElementById('stage');
+
+    if (mode === 'desktop') {
+      stage.innerHTML = `
+        <div class="browser">
+          <div class="browser__bar"><i></i><i></i><i></i><span class="browser__url">Мох — лендинг</span></div>
+          <img src="full-desktop.png" alt="">
+        </div>`;
+    } else {
+      document.getElementById('label').textContent = 'Мобильная версия';
+      document.getElementById('title').textContent = 'Телефон целиком';
+      const img = new Image();
+      img.src = 'full-mobile.png';
+      img.onload = () => {
+        const cols = 4;
+        const w = 340; // inner width of a strip (360 minus borders)
+        const h = Math.ceil((img.naturalHeight * w) / img.naturalWidth / cols);
+        stage.innerHTML = `<div class="strips">${Array.from({ length: cols }, (_, i) =>
+          `<div class="strip" style="height:${h + 20}px"><img src="full-mobile.png" style="margin-top:${-i * h}px" alt=""></div>`
+        ).join('')}</div>`;
+      };
+    }
+  </script>
+</body>
+</html>

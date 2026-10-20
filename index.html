@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Мох — медленное восстановление после выгорания</title>
+  <meta name="description" content="Восьминедельная программа для тех, кто выгорел. Практики по 15 минут в день, группы с психологами, без марафонов продуктивности.">
+  <meta name="theme-color" content="#000000">
+
+  <script>document.documentElement.classList.add('js');</script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,500;1,400;1,500&family=Geologica:wght@300..600&display=swap" rel="stylesheet">
+
+  <link rel="preload" href="assets/rock.webp" as="image">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Перейти к содержимому</a>
+
+  <!-- ================================================================ Header -->
+  <header class="header reveal" style="--d: 0">
+    <a class="logo" href="#top" aria-label="Мох — на главную">
+      <svg class="logo__icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <path d="M4 5l7 7-7 7" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M12 5l7 7-7 7" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" opacity="0.55"/>
+      </svg>
+      <span class="logo__text">Мох</span>
+    </a>
+
+    <nav class="nav" id="nav" aria-label="Основное меню">
+      <ul class="nav__list">
+        <li><a class="nav__link is-active" href="#course" data-nav="course" aria-current="true">Программа</a></li>
+        <li><a class="nav__link" href="#guides" data-nav="guides">Практики</a></li>
+        <li><a class="nav__link" href="#geology" data-nav="geology">Стадии</a></li>
+        <li><a class="nav__link" href="#tour" data-nav="tour">Группы</a></li>
+        <li><a class="nav__link" href="#plans" data-nav="plans">Цены</a></li>
+      </ul>
+    </nav>
+
+    <div class="header__actions">
+      <a class="btn btn--light" href="#plans">Попробовать</a>
+      <button class="burger" type="button" aria-label="Открыть меню" aria-expanded="false" aria-controls="nav">
+        <span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- ============================================================== Hero -->
+    <section class="hero" id="top" data-nav-section="course" data-era="Пусто" data-from="0" data-to="5" data-label="Начало">
+      <h1 class="hero__title">
+        <span class="hero__line hero__line--serif reveal reveal--up" style="--d: 1">Выгорание —</span>
+        <span class="hero__line hero__line--sans reveal reveal--up" style="--d: 2">сезон, а не приговор</span>
+      </h1>
+
+      <div class="stage reveal reveal--scale" style="--d: 3">
+        <div class="stage__float">
+          <div class="rock" id="rock">
+            <img class="rock__layer rock__img" src="assets/rock.webp" alt="Голый серый камень, парящий в темноте" width="3840" height="2160" decoding="async" fetchpriority="high">
+            <video class="rock__layer rock__video" id="rockVideo" src="assets/stones-rock-video.mp4" muted playsinline loop preload="auto" aria-hidden="true"></video>
+            <span class="rock__glow" aria-hidden="true"></span>
+          </div>
+        </div>
+      </div>
+
+      <aside class="hero__note hero__note--left reveal reveal--up" style="--d: 4">
+        <p class="eyebrow">Попробуйте · 01</p>
+        <p class="muted">
+          <span class="hint-mouse">Наведите курсор на камень.</span><span class="hint-touch">Коснитесь камня.</span>
+          Примерно так выглядит восстановление: медленно, неровно, сначала по краям. Но живое возвращается.
+        </p>
+      </aside>
+
+      <aside class="hero__note hero__note--right reveal reveal--up" style="--d: 5">
+        <p class="muted">Восьминедельная программа для тех, кто выгорел — на работе, в родительстве или просто от жизни. Без марафонов продуктивности и советов «просто отдохни». Листайте вниз: страница тоже потихоньку оживает.</p>
+        <a class="btn btn--earth" href="#course">Как это устроено</a>
+      </aside>
+
+      <a class="scroll-cue reveal" style="--d: 6" href="#numbers" aria-label="Листать вниз">
+        <span></span>
+      </a>
+    </section>
+
+    <!-- ============================================================= Stats -->
+    <section class="stats" id="numbers" aria-label="Мох в цифрах" data-nav-section="course" data-era="Тишина" data-from="5" data-to="12" data-label="Цифры">
+      <ul class="container stats__grid">
+        <li class="stat sr" style="--d: 0">
+          <p class="stat__value"><span class="stat__num" data-count="8">8</span><span class="stat__unit">недель</span></p>
+          <p class="stat__text">без спешки: одна тема в неделю, и можно ставить на паузу</p>
+        </li>
+        <li class="stat sr" style="--d: 1">
+          <p class="stat__value"><span class="stat__num" data-count="15">15</span><span class="stat__unit">минут</span></p>
+          <p class="stat__text">в день. Столько находится даже в самый тяжёлый день</p>
+        </li>
+        <li class="stat sr" style="--d: 2">
+          <p class="stat__value"><span class="stat__num" data-count="24">24</span><span class="stat__unit">психолога</span></p>
+          <p class="stat__text">ведут группы. У каждого — профильное образование и опыт работы с выгоранием</p>
+        </li>
+        <li class="stat sr" style="--d: 3">
+          <p class="stat__value"><span class="stat__num" data-count="3100">3 100</span><span class="stat__unit">человек</span></p>
+          <p class="stat__text">прошли программу. Многие — со второй попытки, и это нормально</p>
+        </li>
+      </ul>
+    </section>
+
+    <!-- ============================================================ Course -->
+    <section class="section course" id="course" data-nav-section="course" data-era="Остановка" data-from="12" data-to="25" data-label="Программа">
+      <div class="container">
+        <header class="section-head section-head--split">
+          <div>
+            <p class="eyebrow sr">Программа</p>
+            <h2 class="h2 sr" style="--d: 1"><em>Медленно,</em><br>зато надолго</h2>
+          </div>
+          <p class="lead muted sr" style="--d: 2">Мы не обещаем вернуть вам энергию за выходные. Обещаем помочь понять, куда она утекает, и перестать её терять. Пять этапов, каждый можно проходить столько, сколько нужно именно вам.</p>
+        </header>
+
+        <ol class="modules">
+          <li class="module sr">
+            <span class="module__num">01</span>
+            <h3 class="module__title">Остановиться</h3>
+            <p class="module__text">Разбираемся, что именно вас выжгло: объём работы, потеря смысла или чужие ожидания.</p>
+            <span class="module__meta">1 неделя · 6 практик</span>
+            <span class="module__arrow" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M7 17L17 7M9 7h8v8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+          </li>
+          <li class="module sr">
+            <span class="module__num">02</span>
+            <h3 class="module__title">Сон и тело</h3>
+            <p class="module__text">Начинаем с базы. Пока вы не спите, разговоры о мотивации бесполезны.</p>
+            <span class="module__meta">2 недели · 10 практик</span>
+            <span class="module__arrow" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M7 17L17 7M9 7h8v8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+          </li>
+          <li class="module sr">
+            <span class="module__num">03</span>
+            <h3 class="module__title">Границы</h3>
+            <p class="module__text">Учимся говорить «нет» начальнику, родственникам и собственному перфекционизму.</p>
+            <span class="module__meta">2 недели · 9 практик</span>
+            <span class="module__arrow" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M7 17L17 7M9 7h8v8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+          </li>
+          <li class="module sr">
+            <span class="module__num">04</span>
+            <h3 class="module__title">Опора</h3>
+            <p class="module__text">Ищем то, что даёт силы, а не только забирает. Часто это неожиданно мелкие вещи.</p>
+            <span class="module__meta">2 недели · 8 практик</span>
+            <span class="module__arrow" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M7 17L17 7M9 7h8v8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+          </li>
+          <li class="module sr">
+            <span class="module__num">05</span>
+            <h3 class="module__title">Вернуться</h3>
+            <p class="module__text">Планируем возвращение к работе — или уход с неё. Так, чтобы не сгореть снова через полгода.</p>
+            <span class="module__meta">1 неделя · 5 практик</span>
+            <span class="module__arrow" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M7 17L17 7M9 7h8v8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ===================================================== Practices -->
+    <section class="section guides" id="guides" data-nav-section="guides" data-era="Сон" data-from="25" data-to="38" data-label="Практики">
+      <div class="container">
+        <header class="section-head section-head--row">
+          <div>
+            <p class="eyebrow sr">Практики</p>
+            <h2 class="h2 sr" style="--d: 1"><em>Пятнадцать минут,</em> которые есть у всех</h2>
+          </div>
+          <a class="link-arrow sr" style="--d: 2" href="#plans">Все 60 практик
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </header>
+
+        <div class="guides__grid">
+          <article class="guide sr" style="--d: 0">
+            <div class="guide__media" style="--pos: 30% 48%; --size: 620%"></div>
+            <div class="guide__body">
+              <p class="guide__tag">Утро · 10 мин</p>
+              <h3 class="guide__title">Тихий старт</h3>
+              <p class="guide__text muted">Первые десять минут дня — без телефона. Кажется ерундой, пока не попробуете неделю подряд.</p>
+            </div>
+          </article>
+          <article class="guide sr" style="--d: 1">
+            <div class="guide__media" style="--pos: 62% 40%; --size: 780%; --flip: -1"></div>
+            <div class="guide__body">
+              <p class="guide__tag">Днём · 5 мин</p>
+              <h3 class="guide__title">Проверка заряда</h3>
+              <p class="guide__text muted">Три вопроса себе в обед. Помогают заметить усталость раньше, чем она накроет к вечеру.</p>
+            </div>
+          </article>
+          <article class="guide sr" style="--d: 2">
+            <div class="guide__media" style="--pos: 48% 62%; --size: 560%"></div>
+            <div class="guide__body">
+              <p class="guide__tag">Вечер · 15 мин</p>
+              <h3 class="guide__title">Выгрузка</h3>
+              <p class="guide__text muted">Выписать всё, что крутится в голове, чтобы оно не крутилось там в три часа ночи.</p>
+            </div>
+          </article>
+          <article class="guide sr" style="--d: 3">
+            <div class="guide__media" style="--pos: 74% 44%; --size: 700%; --flip: -1"></div>
+            <div class="guide__body">
+              <p class="guide__tag">Выходные · 1 час</p>
+              <h3 class="guide__title">Без пользы</h3>
+              <p class="guide__text muted">Час на что-то совершенно бесполезное. Труднее, чем кажется, — и нужнее, чем кажется.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================== Stages -->
+    <section class="section geology" id="geology" data-nav-section="geology" data-era="Границы" data-from="38" data-to="50" data-label="Стадии">
+      <div class="container geology__inner">
+        <div class="geology__intro">
+          <p class="eyebrow sr">Стадии</p>
+          <h2 class="h2 sr" style="--d: 1"><em>Где вы</em><br>сейчас?</h2>
+          <p class="lead muted sr" style="--d: 2">Выгорание не случается за один день — оно копится. Мы описали пять стадий простыми словами. Найдите свою: чем раньше заметить, тем короче дорога обратно.</p>
+          <p class="geology__hint sr" style="--d: 3">
+            <span class="dot" aria-hidden="true"></span> Нажмите на стадию, чтобы прочитать
+          </p>
+        </div>
+
+        <ol class="strata" aria-label="Стадии выгорания">
+          <li class="stratum sr is-open" style="--c: #4c5a33; --d: 0">
+            <button class="stratum__head" type="button" aria-expanded="true">
+              <span class="stratum__age">Стадия 1</span>
+              <span class="stratum__name">Перегрев</span>
+              <span class="stratum__icon" aria-hidden="true"></span>
+            </button>
+            <div class="stratum__body"><p>Работаете много и с удовольствием, берёте лишнее, отдыхать некогда — и вроде бы не нужно. Самая коварная стадия: со стороны она выглядит как успех.</p></div>
+          </li>
+          <li class="stratum sr" style="--c: #414b2e; --d: 1">
+            <button class="stratum__head" type="button" aria-expanded="false">
+              <span class="stratum__age">Стадия 2</span>
+              <span class="stratum__name">Застой</span>
+              <span class="stratum__icon" aria-hidden="true"></span>
+            </button>
+            <div class="stratum__body"><p>Задачи те же, а радости меньше. Выходных стало не хватать, кофе — тоже. В голове всё чаще: «Потерплю до отпуска».</p></div>
+          </li>
+          <li class="stratum sr" style="--c: #373c29; --d: 2">
+            <button class="stratum__head" type="button" aria-expanded="false">
+              <span class="stratum__age">Стадия 3</span>
+              <span class="stratum__name">Раздражение</span>
+              <span class="stratum__icon" aria-hidden="true"></span>
+            </button>
+            <div class="stratum__body"><p>Злят коллеги, близкие, звук уведомлений. Сон хуже, болит голова или спина. Отпуск помогает дня на три.</p></div>
+          </li>
+          <li class="stratum sr" style="--c: #2e3025; --d: 3">
+            <button class="stratum__head" type="button" aria-expanded="false">
+              <span class="stratum__age">Стадия 4</span>
+              <span class="stratum__name">Апатия</span>
+              <span class="stratum__icon" aria-hidden="true"></span>
+            </button>
+            <div class="stratum__body"><p>Всё равно. Делаете только необходимое и на автомате. То, что раньше радовало, больше не трогает.</p></div>
+          </li>
+          <li class="stratum sr" style="--c: #232320; --d: 4">
+            <button class="stratum__head" type="button" aria-expanded="false">
+              <span class="stratum__age">Стадия 5</span>
+              <span class="stratum__name">Пустота</span>
+              <span class="stratum__icon" aria-hidden="true"></span>
+            </button>
+            <div class="stratum__body"><p>Тяжело встать утром, сил нет даже на отдых. Здесь одной программы мало — нужен врач или психотерапевт. Это не слабость и не стыдно, и мы поможем найти специалиста.</p></div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ============================================================ Groups -->
+    <section class="section tour" id="tour" data-nav-section="tour" data-era="Опора" data-from="50" data-to="62" data-label="Группы">
+      <div class="container">
+        <div class="tour__panel sr">
+          <video class="tour__video" id="tourVideo" src="assets/stones-rock-video.mp4" muted playsinline loop preload="metadata" aria-hidden="true"></video>
+          <div class="tour__shade" aria-hidden="true"></div>
+
+          <div class="tour__content">
+            <p class="live-badge"><span class="live-badge__dot" aria-hidden="true"></span> Онлайн-группы</p>
+            <h2 class="h2"><em>Вы не одни,</em><br>даже если так кажется</h2>
+            <p class="lead muted">Раз в неделю — встреча в группе до десяти человек с психологом. Камеру можно не включать и ничего не говорить. Многим сначала нужно именно это: послушать, что у других так же.</p>
+            <a class="btn btn--light btn--lg" href="#plans">Выбрать группу</a>
+          </div>
+
+          <ul class="tour__schedule" aria-label="Ближайшие группы">
+            <li>
+              <span class="tour__date" data-in-days="3">21 окт</span>
+              <span class="tour__place">Родители в декрете<small>с Анной Шиловой</small></span>
+              <span class="tour__seats">6 мест</span>
+            </li>
+            <li>
+              <span class="tour__date" data-in-days="5">23 окт</span>
+              <span class="tour__place">IT и вечные дедлайны<small>с Ильёй Гречко</small></span>
+              <span class="tour__seats">2 места</span>
+            </li>
+            <li>
+              <span class="tour__date" data-in-days="9">27 окт</span>
+              <span class="tour__place">Врачи и учителя<small>с Верой Остапенко</small></span>
+              <span class="tour__seats">Лист ожидания</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================= Plans -->
+    <section class="section plans" id="plans" data-nav-section="plans" data-era="Интерес" data-from="62" data-to="75" data-label="Цены">
+      <div class="container">
+        <header class="section-head section-head--center">
+          <p class="eyebrow sr">Цены</p>
+          <h2 class="h2 sr" style="--d: 1"><em>Выберите</em> свой темп</h2>
+          <div class="billing sr" style="--d: 2" role="group" aria-label="Период оплаты">
+            <button class="billing__btn is-active" type="button" data-billing="monthly" aria-pressed="true">Помесячно</button>
+            <button class="billing__btn" type="button" data-billing="yearly" aria-pressed="false">За год <span class="billing__save">−25%</span></button>
+          </div>
+        </header>
+
+        <div class="plans__grid">
+          <article class="plan sr" style="--d: 0">
+            <h3 class="plan__name">Росток</h3>
+            <p class="plan__desc muted">Чтобы понять, подходит ли вам.</p>
+            <p class="plan__price"><span class="plan__amount">0 ₽</span><span class="plan__per">навсегда</span></p>
+            <ul class="plan__list">
+              <li>Первая неделя программы</li>
+              <li>Тест на стадию выгорания</li>
+              <li>10 практик на выбор</li>
+            </ul>
+            <a class="btn btn--ghost btn--block" href="#course">Начать бесплатно</a>
+          </article>
+
+          <article class="plan plan--featured sr" style="--d: 1">
+            <p class="plan__badge">Выбирают чаще всего</p>
+            <h3 class="plan__name">Мох</h3>
+            <p class="plan__desc muted">Вся программа в своём темпе.</p>
+            <p class="plan__price"><span class="plan__amount" data-monthly="790" data-yearly="590">790 ₽</span><span class="plan__per">в месяц</span></p>
+            <ul class="plan__list">
+              <li>Все восемь недель программы</li>
+              <li>Все 60 практик, в том числе аудио</li>
+              <li>Мягкие напоминания, без давления</li>
+              <li>Одна групповая встреча в месяц</li>
+            </ul>
+            <a class="btn btn--earth btn--block" href="#course">Начать программу</a>
+          </article>
+
+          <article class="plan sr" style="--d: 2">
+            <h3 class="plan__name">Лес</h3>
+            <p class="plan__desc muted">Когда нужна поддержка живого человека.</p>
+            <p class="plan__price"><span class="plan__amount" data-monthly="2990" data-yearly="2240">2 990 ₽</span><span class="plan__per">в месяц</span></p>
+            <ul class="plan__list">
+              <li>Всё, что есть в «Мхе»</li>
+              <li>Группа с психологом каждую неделю</li>
+              <li>Чат с психологом по будням</li>
+              <li>Личный план возвращения к работе</li>
+            </ul>
+            <a class="btn btn--ghost btn--block" href="#tour">Подобрать психолога</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- =============================================================== FAQ -->
+    <section class="section faq" id="faq" data-nav-section="plans" data-era="Силы" data-from="75" data-to="86" data-label="Вопросы">
+      <div class="container faq__inner">
+        <div>
+          <p class="eyebrow sr">Вопросы</p>
+          <h2 class="h2 sr" style="--d: 1"><em>Честно</em><br>о важном</h2>
+        </div>
+        <div class="faq__list">
+          <details class="faq__item sr" open>
+            <summary>Это заменяет психотерапию?</summary>
+            <p class="muted">Нет. Программа хорошо помогает на ранних стадиях и дополняет терапию, но не заменяет её. Если вы чувствуете, что не справляетесь, обратитесь к врачу или психотерапевту — в поддержке подскажут, как найти специалиста.</p>
+          </details>
+          <details class="faq__item sr">
+            <summary>А если у меня нет сил даже на 15 минут?</summary>
+            <p class="muted">Тогда пять. Или ноль: в программе есть «пустые дни», когда задание — ничего не делать. Это не провал, а часть плана.</p>
+          </details>
+          <details class="faq__item sr">
+            <summary>Кто ведёт группы?</summary>
+            <p class="muted">Практикующие психологи с профильным образованием и опытом работы с выгоранием. Дипломы и анкету каждого можно посмотреть до записи.</p>
+          </details>
+          <details class="faq__item sr">
+            <summary>Узнает ли мой работодатель?</summary>
+            <p class="muted">Нет, если вы сами не расскажете. Мы не передаём ваши данные третьим лицам, а в группах можно участвовать под любым именем.</p>
+          </details>
+          <details class="faq__item sr">
+            <summary>Можно ли отменить подписку?</summary>
+            <p class="muted">Да, в два нажатия в профиле. Записи и прогресс останутся — вернётесь, и всё будет на своих местах.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- =============================================================== CTA -->
+    <section class="section cta" data-nav-section="plans" data-era="Живое" data-from="86" data-to="96" data-label="Старт">
+      <div class="container cta__inner">
+        <h2 class="h2 h2--xl sr">Начните<br><em>с малого</em></h2>
+        <p class="lead muted sr" style="--d: 1">Не нужно менять жизнь с понедельника. Хватит одной практики сегодня вечером — пятнадцать минут, без подготовки.</p>
+        <div class="cta__actions sr" style="--d: 2">
+          <a class="btn btn--earth btn--lg" href="#plans">Попробовать бесплатно</a>
+          <a class="btn btn--ghost btn--lg" href="#geology">Узнать свою стадию</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ================================================================ Footer -->
+  <footer class="footer" data-era="Цветение" data-from="96" data-to="100" data-label="Конец страницы">
+    <div class="container">
+      <div class="footer__top">
+        <div class="footer__brand">
+          <a class="logo" href="#top" aria-label="Мох — наверх">
+            <svg class="logo__icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M4 5l7 7-7 7" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M12 5l7 7-7 7" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" opacity="0.55"/>
+            </svg>
+            <span class="logo__text">Мох</span>
+          </a>
+          <p class="muted">Медленное восстановление после выгорания.</p>
+        </div>
+
+        <nav class="footer__cols" aria-label="Нижнее меню">
+          <div>
+            <p class="footer__title">Программа</p>
+            <ul>
+              <li><a href="#course">Как устроена</a></li>
+              <li><a href="#guides">Практики</a></li>
+              <li><a href="#geology">Стадии</a></li>
+              <li><a href="#tour">Группы</a></li>
+            </ul>
+          </div>
+          <div>
+            <p class="footer__title">О нас</p>
+            <ul>
+              <li><a href="#top">О проекте</a></li>
+              <li><a href="#tour">Психологи</a></li>
+              <li><a href="#plans">Цены</a></li>
+              <li><a href="#newsletter">Связаться</a></li>
+            </ul>
+          </div>
+          <div>
+            <p class="footer__title">Мы в сети</p>
+            <ul>
+              <li><a>Telegram</a></li>
+              <li><a>ВКонтакте</a></li>
+              <li><a>YouTube</a></li>
+            </ul>
+          </div>
+        </nav>
+
+        <form class="newsletter" id="newsletter" novalidate>
+          <label class="footer__title" for="email">Воскресное письмо</label>
+          <p class="muted">Одно спокойное письмо в неделю. Без мотивационных цитат.</p>
+          <div class="newsletter__row">
+            <input id="email" name="email" type="email" placeholder="ваша@почта.ru" autocomplete="email" required>
+            <button class="btn btn--light" type="submit">Подписаться</button>
+          </div>
+          <p class="newsletter__msg" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+
+      <p class="footer__wordmark" aria-hidden="true">Мох</p>
+
+      <div class="footer__bottom">
+        <p>© <span id="year">2026</span> Мох. Растём медленно. Сервис не является медицинской помощью.</p>
+        <p><a>Конфиденциальность</a> · <a>Условия</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============================================================ Charge gauge -->
+  <aside class="depth" aria-label="Шкала заряда: как далеко вы продвинулись по странице">
+    <div class="depth__track">
+      <span class="depth__fill" aria-hidden="true"></span>
+      <span class="depth__marker" aria-hidden="true"></span>
+    </div>
+    <p class="depth__readout" aria-hidden="true">
+      <span class="depth__era">Пусто</span>
+      <span class="depth__age">заряд 0%</span>
+    </p>
+  </aside>
+
+  <script src="script.js"></script>
+</body>
+</html>

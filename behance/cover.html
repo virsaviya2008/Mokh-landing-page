@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<title>Behance cover — virsaviya_web</title>
+<!--
+  Шаблон обложки для серии работ на Behance (808×632, рендер в 2x).
+  Данные меняются через параметры адреса, например:
+  cover.html?n=02&title=Название&tag=Лендинг · Финтех&sub=Короткое описание&img=shot.png
+-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700&family=Manrope:wght@500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0a0a0b;
+    --pink: #ff4fa3;
+    --pink-soft: rgba(255, 79, 163, 0.18);
+    --text: #f4f1f3;
+    --muted: rgba(244, 241, 243, 0.55);
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html, body { width: 808px; height: 632px; background: var(--bg); overflow: hidden; }
+
+  body {
+    position: relative;
+    font-family: 'Manrope', Arial, sans-serif;
+    color: var(--text);
+  }
+
+  /* Pink glow + grain: the signature background of the series */
+  .glow {
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(520px 380px at 88% 92%, var(--pink-soft), transparent 70%),
+      radial-gradient(300px 220px at 6% 0%, rgba(255, 79, 163, 0.08), transparent 70%);
+  }
+
+  .grain {
+    position: absolute;
+    inset: 0;
+    opacity: 0.09;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+
+  .frame {
+    position: absolute;
+    inset: 28px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 22px;
+  }
+
+  .top {
+    position: absolute;
+    top: 52px;
+    left: 56px;
+    right: 56px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+
+  .brand { display: flex; align-items: center; gap: 10px; color: var(--text); }
+  .brand i { width: 8px; height: 8px; border-radius: 50%; background: var(--pink); box-shadow: 0 0 12px var(--pink); }
+
+  .num b { color: var(--pink); font-weight: 700; }
+
+  .info {
+    position: absolute;
+    left: 56px;
+    top: 128px;
+    width: 330px;
+  }
+
+  .tag {
+    display: inline-block;
+    padding: 7px 14px;
+    border: 1px solid var(--pink);
+    border-radius: 999px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    color: var(--pink);
+  }
+
+  .title {
+    margin-top: 26px;
+    font-family: 'Unbounded', 'Arial Black', sans-serif;
+    font-weight: 700;
+    font-size: 84px;
+    line-height: 0.95;
+    letter-spacing: -0.03em;
+  }
+
+  .title span { color: var(--pink); }
+
+  .sub {
+    margin-top: 22px;
+    font-size: 16px;
+    line-height: 1.45;
+    color: var(--muted);
+  }
+
+  /* Screenshot in a browser window, bleeding off the right edge */
+  .shot {
+    position: absolute;
+    left: 410px;
+    top: 150px;
+    width: 520px;
+    border-radius: 14px;
+    overflow: hidden;
+    background: #141416;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.7), 0 0 0 6px rgba(255, 79, 163, 0.07);
+    transform: rotate(-4deg);
+  }
+
+  .shot__bar { display: flex; gap: 6px; padding: 10px 12px; background: #19191c; }
+  .shot__bar i { width: 9px; height: 9px; border-radius: 50%; background: rgba(255, 255, 255, 0.18); }
+  .shot__bar i:first-child { background: var(--pink); }
+  .shot img { display: block; width: 100%; }
+
+  .bottom {
+    position: absolute;
+    left: 56px;
+    bottom: 52px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 15px;
+    font-weight: 700;
+  }
+
+  .tg {
+    display: grid;
+    place-items: center;
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background: var(--pink);
+  }
+  .tg svg { width: 16px; height: 16px; margin-left: -2px; }
+
+  .bottom small { display: block; font-size: 11px; font-weight: 500; color: var(--muted); letter-spacing: 0.04em; }
+</style>
+</head>
+<body>
+  <div class="glow"></div>
+  <div class="grain"></div>
+  <div class="frame"></div>
+
+  <div class="top">
+    <span class="brand"><i></i>virsaviya · web</span>
+    <span class="num">N° <b id="n">01</b> / <span id="year">2026</span></span>
+  </div>
+
+  <div class="info">
+    <span class="tag" id="tag">Лендинг · Wellness</span>
+    <h1 class="title" id="title">Мох<span>.</span></h1>
+    <p class="sub" id="sub">Сайт программы восстановления после выгорания</p>
+  </div>
+
+  <div class="shot">
+    <div class="shot__bar"><i></i><i></i><i></i></div>
+    <img id="img" src="shot-top.png" alt="">
+  </div>
+
+  <div class="bottom">
+    <span class="tg">
+      <svg viewBox="0 0 24 24" fill="#0a0a0b"><path d="M21.9 4.3 18.7 19.4c-.2 1-.9 1.3-1.7.8l-4.8-3.5-2.3 2.2c-.3.3-.5.5-1 .5l.3-4.9 8.9-8c.4-.3-.1-.5-.6-.2L6.6 13.2l-4.7-1.5c-1-.3-1-1 .2-1.5L20.6 3c.9-.3 1.6.2 1.3 1.3z"/></svg>
+    </span>
+    <span><small>Заказать сайт</small>@virsaviya_web</span>
+  </div>
+
+  <script>
+    const q = new URLSearchParams(location.search);
+    const set = (id, v) => { if (v) document.getElementById(id).textContent = v; };
+    set('n', q.get('n'));
+    set('tag', q.get('tag'));
+    set('sub', q.get('sub'));
+    set('year', q.get('year'));
+    if (q.get('title')) document.getElementById('title').innerHTML = `${q.get('title')}<span>.</span>`;
+    if (q.get('img')) document.getElementById('img').src = q.get('img');
+  </script>
+</body>
+</html>
